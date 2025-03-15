@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <!-- Pixel art style ice mountain -->
+    <style>
+        .pixel { shape-rendering: crispEdges; }
+    </style>
+    <!-- Mountain base -->
+    <path class="pixel" d="
+        M4 28
+        h24
+        l-4-4
+        l-2 2
+        l-4-4
+        l-2 2
+        l-4-4
+        l-2 2
+        l-4-4
+        l-2 2
+        Z" 
+        fill="#A5F2F3"/>
+    <!-- Snow caps -->
+    <path class="pixel" d="
+        M8 24
+        l8-16
+        l8 16
+        l-4-4
+        l-4-8
+        l-4 8
+        l-4 4
+        Z" 
+        fill="#FFFFFF"/>
+    <!-- Ice highlights -->
+    <path class="pixel" d="
+        M12 20
+        l4-8
+        l4 8
+        l-2-2
+        l-2-4
+        l-2 4
+        l-2 2
+        Z" 
+        fill="#E0FFFF"/>
+</svg>
