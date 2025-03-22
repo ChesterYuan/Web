@@ -1,6 +1,12 @@
 version: '3'
 
 services:
+  landing-page:
+    build: ./landing-page
+    restart: unless-stopped
+    networks:
+      - web
+
   game:
     image: jump-game
     restart: unless-stopped
@@ -11,11 +17,17 @@ services:
     image: nginx:alpine
     ports:
       - "80:80"
+      - "443:443"
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./landing-page:/var/www/landing-page
     restart: unless-stopped
     networks:
       - web
+    depends_on:
+      - landing-page
+      - game
 
 networks:
   web:
